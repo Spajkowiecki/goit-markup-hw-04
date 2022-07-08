@@ -1,0 +1,337 @@
+/*
+
+STEP 1: napisz cały szkielet strony bez css'a
+STEP 2: ostyluj najpierw cały tekst
+STEP 3: Poukładaj elementy
+
+*/
+
+* {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* BASIC FONTS USED ON PAGE 
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-family: 'Raleway', sans-serif;
+
+    font-family: 'Roboto', sans-serif;
+
+  */
+
+  /* BASIC COLORS USED ON PAGE | KOLORY UŻYTE NA STRONIE */
+  /* Kolory tekstu */
+  --main-font-color: #212121; /* main color */
+  --header-bg: #2f303a;
+  --team-bg: #f5f4fa;
+  --logo-black: #000000; /* 1st logo color */
+  --logo-white: #ffffff; /* 2nd logo color */
+  --secondary-font-color: #757575; /* secondary color */
+  --link-hover-font-color: #2196f3; /* main color */
+}
+
+body {
+  width: 1600px;
+  font-family: "Roboto", "Raleway", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  color: var(--main-font-color);
+  background-color: rgb(65, 65, 65);
+}
+/* GLOBAL SETS */
+
+.main {
+  background-color: var(--logo-white);
+}
+
+.list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.center-all {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section_basics h2 {
+  padding-bottom: 50px;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section:first-child {
+  padding-bottom: 0;
+}
+
+.section {
+  padding: 94px 0;
+}
+
+/* STYLIZACJA LOGO */
+.logo {
+  font-family: "Raleway";
+  color: var(--logo-black);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.logo > span {
+  color: var(--link-hover-font-color);
+}
+/* STYLIZACJA NAV */
+.nav-container {
+  background-color: var(--logo-white);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  padding: 24px 227px 25px 215px;
+  border: 1px solid #ececec;
+}
+
+.navigation {
+  letter-spacing: 0.02em;
+  text-align: left;
+  font-weight: 500;
+  padding-left: 93px;
+  padding-right: 345px;
+}
+
+.address {
+  font-style: normal;
+}
+
+.nav_link {
+  color: var(--main-font-color);
+}
+
+.nav {
+  gap: 46px;
+}
+
+.nav_link:hover {
+  color: var(--link-hover-font-color);
+}
+
+.contact {
+  font-weight: 500;
+}
+
+.contact > li:nth-child(2) {
+  padding-left: 30px;
+}
+
+.contact .nav_link {
+  color: var(--secondary-font-color);
+}
+.contact .nav_link:hover {
+  color: var(--link-hover-font-color);
+}
+/* STYLIZACJA HEADING_BAR  */
+.heading_bar {
+  background-color: var(--header-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 0px 452px;
+  height: 600px;
+  justify-content: center;
+  gap: 30px;
+}
+
+.heading_bar h1 {
+  color: var(--logo-white);
+  letter-spacing: 0.06em;
+  text-align: center;
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1.36;
+  width: 696px;
+  height: 120px;
+}
+
+.heading_bar button {
+  line-height: calc(30 / 16);
+  letter-spacing: 0.06em;
+  width: 200px;
+  height: 50px;
+  font-weight: 700;
+  color: white;
+  border-radius: 4px;
+  background-color: var(--link-hover-font-color);
+  align-self: center;
+}
+
+.heading_bar button:hover {
+  cursor: pointer;
+  border: 1px solid var(--link-hover-font-color);
+}
+
+/* STYLIZACJA ATUTÓW */
+.list .atut_list {
+  width: 270px;
+  letter-spacing: 0.03em;
+}
+
+.atut_list .h7 {
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.atut_list .p2 {
+  font-weight: 400;
+  line-height: calc(24 / 14);
+  color: var(--secondary-font-color);
+}
+/* WHAT WE DO */
+
+/* NASZ ZESPÓŁ */
+.poster {
+  background-color: white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.poster figcaption {
+  text-align: center;
+  padding: 30px 70px;
+}
+
+.poster h3 {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  line-height: auto;
+
+  padding-bottom: 10px;
+}
+
+.poster p {
+  color: var(--secondary-font-color);
+  font-weight: 500;
+  line-height: auto;
+}
+/* my team */
+.my_team {
+  background-color: var(--team-bg);
+}
+/* FOOTER section */
+.footer {
+  padding: 60px 0px 215px 60px;
+  background-color: var(--header-bg);
+  height: 252px;
+}
+
+.logo-2 {
+  font-family: "Raleway";
+  color: var(--logo-white);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.logo-2 > span {
+  color: var(--link-hover-font-color);
+}
+.address {
+  color: var(--logo-white);
+}
+
+.footer-contacts {
+  padding-top: 20px;
+  line-height: 1.71;
+}
+
+.footer-contacts a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-contacts li:nth-child(2) {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+.filter {
+  gap: 8px;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.filter > li > button {
+  font-weight: 500;
+  padding: 6px 22px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  color: var(--main-font-color);
+  line-height: calc(26 / 16);
+  letter-spacing: 00.03em;
+  cursor: pointer;
+}
+
+.filter > li > button:hover {
+  background-color: var(--link-hover-font-color);
+  color: var(--logo-white);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.filter > li > button:focus {
+  background-color: var(--link-hover-font-color);
+  color: var(--logo-white);
+}
+
+.portfolio_poster {
+  background-color: var(--logo-white);
+}
+
+.portfolio_poster_description {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px 24px;
+  border: 1px solid #eeeeee;
+}
+
+.poster-h7 {
+  font-weight: 700;
+  line-height: calc(36 / 18);
+  letter-spacing: 0.06em;
+  font-size: 18px;
+}
+
+.poster_image {
+  vertical-align: top;
+}
+
+.poster-desc {
+  line-height: calc(30 / 16);
+  font-size: 16px;
+  font-style: normal;
+  color: var(--secondary-font-color);
+}
+
+.posters {
+  flex-wrap: wrap;
+  padding-bottom: 94px;
+}
+
+.filter_nav {
+  padding-bottom: 0px;
+}
