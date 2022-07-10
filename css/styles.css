@@ -5,7 +5,7 @@ STEP 2: ostyluj najpierw cały tekst
 STEP 3: Poukładaj elementy
 
 */
-
+/* RESET USTAWIEŃ CSS */
 * {
   box-sizing: border-box;
   list-style: none;
@@ -16,13 +16,9 @@ STEP 3: Poukładaj elementy
 
 :root {
   /* BASIC FONTS USED ON PAGE 
-
-    font-family: 'Montserrat', sans-serif;
-
     font-family: 'Raleway', sans-serif;
 
     font-family: 'Roboto', sans-serif;
-
   */
 
   /* BASIC COLORS USED ON PAGE | KOLORY UŻYTE NA STRONIE */
@@ -36,172 +32,211 @@ STEP 3: Poukładaj elementy
   --link-hover-font-color: #2196f3; /* main color */
 }
 
+/* USTAWIENIE STANDARDOWYCH DANYCH */
+
 body {
   width: 1600px;
   font-family: "Roboto", "Raleway", sans-serif;
   font-size: 14px;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   color: var(--main-font-color);
-  background-color: rgb(65, 65, 65);
-}
-/* GLOBAL SETS */
-
-.main {
   background-color: var(--logo-white);
+  box-shadow: 3px 3px 5px rgb(136, 136, 136);
 }
 
-.list {
+/*
+-------------------> Ustawienia powtarzalne
+*/
+
+/* służy do ustawienia elementów w poziomie */
+
+.flex-- {
+  display: flex;
+}
+
+.flex-around-- {
   display: flex;
   justify-content: space-around;
 }
 
-.center-all {
-  margin-left: auto;
-  margin-right: auto;
+.flex-between-- {
+  display: flex;
+  justify-content: space-between;
+}
+/*
+------------------> stałe dla tekstu
+*/
+
+.-normal {
+  font-weight: 400;
 }
 
-.section_basics h2 {
-  padding-bottom: 50px;
-  font-size: 36px;
+.-medium {
+  font-weight: 500;
+}
+
+.-bold {
   font-weight: 700;
-  text-align: center;
 }
 
+.-black {
+  font-weight: 800;
+}
+
+/* KONTENER POMOCNICZY DO CENTROWANIA ELEMENTÓW */
 .container {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.section:first-child {
-  padding-bottom: 0;
+.center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.section {
-  padding: 94px 0;
-}
+/*
+------------------->  W Headerze znajduje się cała nawigacja górna 
+*/
 
-/* STYLIZACJA LOGO */
-.logo {
-  font-family: "Raleway";
-  color: var(--logo-black);
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-}
-
-.logo > span {
-  color: var(--link-hover-font-color);
-}
-/* STYLIZACJA NAV */
-.nav-container {
-  background-color: var(--logo-white);
-  display: flex;
-  justify-content: space-around;
+/* -[ KONTENER DLA NAWIGACJI ]- */
+.navigator {
   align-items: center;
-  height: 80px;
   padding: 24px 227px 25px 215px;
+  height: 80px;
   border: 1px solid #ececec;
 }
+
+/* -[ Navigation ]- */
 
 .navigation {
   letter-spacing: 0.02em;
   text-align: left;
-  font-weight: 500;
   padding-left: 93px;
   padding-right: 345px;
 }
 
-.address {
-  font-style: normal;
+/* Odstęp ustawiony po przez justify content: space-around */
+
+/* -[D: STYLIZACJA LOGO ]-*/
+.nav_logo {
+  font-family: "Raleway";
+  color: var(--logo-black);
+  font-size: 26px;
+  letter-spacing: 0.03em;
 }
 
+/* -[P: nav_logo | stylizuje na niebiesko text: "WEB"]- */
+.l-1 span {
+  color: var(--link-hover-font-color);
+}
+/* -[P: nav_logo | stylizuje na biało text: "WEB"]- */
+
+.footer .nav_logo {
+  color: var(--logo-white);
+}
+
+.l-2 span {
+  color: var(--link-hover-font-color);
+}
+/* Podstawowa stylizacja linków  */
 .nav_link {
   color: var(--main-font-color);
 }
 
-.nav {
-  gap: 46px;
-}
-
-.nav_link:hover {
+/* Zmiana koloru po najechaniu myszki */
+.nav_link:hover,
+.nav-contact .nav_link:hover {
   color: var(--link-hover-font-color);
 }
 
-.contact {
-  font-weight: 500;
+.nav-core li:not(:last-child) {
+  padding-right: 46px;
 }
 
-.contact > li:nth-child(2) {
-  padding-left: 30px;
+.nav-contact li:not(:last-child) {
+  padding-right: 50px;
 }
 
-.contact .nav_link {
+/* zmiania koloru podstawowego linków w nav-contact i ustawienie odległości pomiędzy elementami */
+.nav-contact .nav_link {
   color: var(--secondary-font-color);
 }
-.contact .nav_link:hover {
-  color: var(--link-hover-font-color);
-}
-/* STYLIZACJA HEADING_BAR  */
-.heading_bar {
+/*
+-------------------##############################----------------------
+/* STYLIZACJA HEADING_BAR  */ /* STYLIZACJA HEADING_BAR  */ /* STYLIZACJA HEADING_BAR  */
+.hero {
   background-color: var(--header-bg);
-  display: flex;
   flex-direction: column;
-  padding: 0px 452px;
-  height: 600px;
   justify-content: center;
-  gap: 30px;
+  height: 600px;
 }
 
-.heading_bar h1 {
+.hero > h1 {
   color: var(--logo-white);
   letter-spacing: 0.06em;
-  text-align: center;
   font-size: 44px;
-  font-weight: 900;
-  line-height: 1.36;
+  line-height: calc(60 / 44);
   width: 696px;
-  height: 120px;
+  text-align: center;
+  align-self: center;
 }
 
-.heading_bar button {
+.hero > button {
   line-height: calc(30 / 16);
   letter-spacing: 0.06em;
   width: 200px;
   height: 50px;
-  font-weight: 700;
   color: white;
   border-radius: 4px;
   background-color: var(--link-hover-font-color);
   align-self: center;
 }
 
-.heading_bar button:hover {
+.heading_bar > button:hover {
   cursor: pointer;
   border: 1px solid var(--link-hover-font-color);
 }
 
-/* STYLIZACJA ATUTÓW */
-.list .atut_list {
+/* USTAWIENIE SEKCJI */ /* USTAWIENIE SEKCJI */ /* USTAWIENIE SEKCJI */ /* USTAWIENIE SEKCJI */ /* USTAWIENIE SEKCJI */
+.section {
+  padding: 94px 0;
+}
+
+.section:first-child {
+  padding-bottom: 0px;
+}
+
+.section > h2 {
+  padding-bottom: 50px;
+  font-size: 36px;
+  text-align: center;
+}
+
+/* STYLIZACJA ATUTÓW */ /* STYLIZACJA ATUTÓW */ /* STYLIZACJA ATUTÓW */ /* STYLIZACJA ATUTÓW */ /* STYLIZACJA ATUTÓW */
+
+/* Ustawienie kontenera na listę w klasie atut */
+.atut_list {
   width: 270px;
   letter-spacing: 0.03em;
 }
 
+/*Custom paragraph h7*/
 .atut_list .h7 {
-  font-weight: 700;
   padding-bottom: 10px;
 }
 
+/* Custom paragraph p2 */
 .atut_list .p2 {
-  font-weight: 400;
   line-height: calc(24 / 14);
   color: var(--secondary-font-color);
 }
-/* WHAT WE DO */
+/*
+-------------------##############################----------------------*/
 
 /* NASZ ZESPÓŁ */
 .poster {
-  background-color: white;
+  background-color: var(--team-bg);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 4px;
@@ -214,57 +249,19 @@ body {
 }
 
 .poster h3 {
-  font-size: 16px;
   font-weight: 500;
+  font-size: 16px;
   letter-spacing: 0.03em;
-  line-height: auto;
-
   padding-bottom: 10px;
 }
 
 .poster p {
-  color: var(--secondary-font-color);
   font-weight: 500;
-  line-height: auto;
+  color: var(--secondary-font-color);
 }
 /* my team */
 .my_team {
   background-color: var(--team-bg);
-}
-/* FOOTER section */
-.footer {
-  padding: 60px 0px 215px 60px;
-  background-color: var(--header-bg);
-  height: 252px;
-}
-
-.logo-2 {
-  font-family: "Raleway";
-  color: var(--logo-white);
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-}
-
-.logo-2 > span {
-  color: var(--link-hover-font-color);
-}
-.address {
-  color: var(--logo-white);
-}
-
-.footer-contacts {
-  padding-top: 20px;
-  line-height: 1.71;
-}
-
-.footer-contacts a {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.footer-contacts li:nth-child(2) {
-  padding-top: 9px;
-  padding-bottom: 9px;
 }
 
 .filter {
@@ -329,9 +326,49 @@ body {
 
 .posters {
   flex-wrap: wrap;
+  gap: 30px;
   padding-bottom: 94px;
 }
 
 .filter_nav {
   padding-bottom: 0px;
+}
+
+/* FOOTER section */ /* FOOTER section */ /* FOOTER section */ /* FOOTER section */ /* FOOTER section */ /* FOOTER section */ /* FOOTER section */
+
+.footer_content {
+  background-color: var(--header-bg);
+  padding-left: 30px;
+}
+
+.footer_contacts {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  line-height: calc(24 / 14);
+  gap: 9px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 252px;
+}
+
+.footer_contacts > .nav_link .footer > .nav_logo {
+  padding-bottom: 20px;
+}
+
+.footer_contacts .nav_link {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer_contacts .nav_link:hover {
+  color: var(--link-hover-font-color);
+}
+
+.address {
+  font-style: normal;
+  color: var(--logo-white);
 }
