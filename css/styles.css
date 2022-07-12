@@ -30,6 +30,7 @@ STEP 3: Poukładaj elementy
   --logo-white: #ffffff; /* 2nd logo color */
   --secondary-font-color: #757575; /* secondary color */
   --link-hover-font-color: #2196f3; /* main color */
+  --clients-dark-gray: #afb1b8;
 }
 
 /* USTAWIENIE STANDARDOWYCH DANYCH */
@@ -50,16 +51,16 @@ body {
 
 /* służy do ustawienia elementów w poziomie */
 
-.flex-- {
+.flex {
   display: flex;
 }
 
-.flex-around-- {
+.flex-around {
   display: flex;
   justify-content: space-around;
 }
 
-.flex-between-- {
+.flex-between {
   display: flex;
   justify-content: space-between;
 }
@@ -180,6 +181,7 @@ body {
   width: 696px;
   text-align: center;
   align-self: center;
+  padding-bottom: 30px;
 }
 
 .hero > button {
@@ -193,9 +195,8 @@ body {
   align-self: center;
 }
 
-.heading_bar > button:hover {
+.hero > button:hover {
   cursor: pointer;
-  border: 1px solid var(--link-hover-font-color);
 }
 
 /* USTAWIENIE SEKCJI */ /* USTAWIENIE SEKCJI */ /* USTAWIENIE SEKCJI */ /* USTAWIENIE SEKCJI */ /* USTAWIENIE SEKCJI */
@@ -215,20 +216,30 @@ body {
 
 /* STYLIZACJA ATUTÓW */ /* STYLIZACJA ATUTÓW */ /* STYLIZACJA ATUTÓW */ /* STYLIZACJA ATUTÓW */ /* STYLIZACJA ATUTÓW */
 
-/* Ustawienie kontenera na listę w klasie atut */
-.atut_list {
+/* ELEMENTY SVG */
+
+.atut_svg {
+  display: flex;
   width: 270px;
-  letter-spacing: 0.03em;
+  height: 120px;
+  background: var(--team-bg);
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  margin-bottom: 30px;
 }
 
+/* Ustawienie kontenera na listę w klasie atut */
 /*Custom paragraph h7*/
-.atut_list .h7 {
+.atut_h7 {
   padding-bottom: 10px;
 }
 
 /* Custom paragraph p2 */
-.atut_list .p2 {
+.atut_p2 {
   line-height: calc(24 / 14);
+  width: 270px;
+  letter-spacing: 0.03em;
   color: var(--secondary-font-color);
 }
 /*
@@ -236,7 +247,7 @@ body {
 
 /* NASZ ZESPÓŁ */
 .poster {
-  background-color: var(--team-bg);
+  background-color: var(--logo-white);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 4px;
@@ -245,7 +256,9 @@ body {
 
 .poster figcaption {
   text-align: center;
-  padding: 30px 70px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: auto;
 }
 
 .poster h3 {
@@ -326,49 +339,116 @@ body {
 
 .posters {
   flex-wrap: wrap;
-  gap: 30px;
+  row-gap: 30px;
   padding-bottom: 94px;
+}
+
+.footer_svg,
+.poster_svg {
+  padding-top: 16px;
+  width: 206px;
+  fill: var(--clients-dark-gray);
+}
+.footer_svg_item,
+.poster_svg_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+}
+
+.footer_svg {
+  padding-top: 20px;
+}
+
+.footer_svg_item {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.footer_svg_item:hover,
+.poster_svg_item:hover {
+  border-radius: 50%;
+  background-color: var(--link-hover-font-color);
+  fill: var(--logo-white);
 }
 
 .filter_nav {
   padding-bottom: 0px;
 }
+/* NASI KLIENCI */ /* NASI KLIENCI */ /* NASI KLIENCI */ /* NASI KLIENCI */ /* NASI KLIENCI */ /* NASI KLIENCI */ /* NASI KLIENCI */ /* NASI KLIENCI */
+
+.clients_svg {
+  display: flex;
+  border: 1px solid var(--clients-dark-gray);
+  border-radius: 4px;
+  width: 170px;
+  height: 92px;
+  justify-content: center;
+  align-items: center;
+  fill: var(--clients-dark-gray);
+}
+
+.clients_svg:hover {
+  border-color: var(--link-hover-font-color);
+  fill: var(--link-hover-font-color);
+}
+
+.clients_svg_box {
+  width: 106px;
+  height: 60.04px;
+}
 
 /* FOOTER section */ /* FOOTER section */ /* FOOTER section */ /* FOOTER section */ /* FOOTER section */ /* FOOTER section */ /* FOOTER section */
 
 .footer_content {
+  display: flex;
   background-color: var(--header-bg);
+  height: 252px;
   padding-left: 30px;
 }
 
 .footer_contacts {
-  padding-top: 20px;
   display: flex;
-  flex-direction: column;
-  line-height: calc(24 / 14);
-  gap: 9px;
+  align-items: center;
+  gap: 70px;
 }
 
-.footer {
+.footer_place {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 252px;
+  align-items: center;
 }
 
-.footer_contacts > .nav_link .footer > .nav_logo {
+.footer_desc {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  font-weight: calc(24 / 14);
+  letter-spacing: 0.03em;
+}
+
+.footer_logo {
   padding-bottom: 20px;
 }
 
-.footer_contacts .nav_link {
+.footer_desc .nav_link {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.footer_contacts .nav_link:hover {
+.footer_desc .nav_link:hover {
   color: var(--link-hover-font-color);
 }
 
 .address {
   font-style: normal;
   color: var(--logo-white);
+}
+
+.join_us p {
+  color: var(--logo-white);
+}
+
+.join_socials {
+  display: flex;
 }
