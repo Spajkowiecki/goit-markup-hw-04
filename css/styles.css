@@ -147,7 +147,9 @@ body {
 
 /* Zmiana koloru po najechaniu myszki */
 .nav_link:hover,
+.nav_link:focus,
 .nav-contact .nav_link:hover,
+.nav-contact .nav_link:focus,
 .nav_icons {
   color: var(--link-hover-font-color);
   fill: var(--link-hover-font-color);
@@ -320,15 +322,19 @@ body {
 .filter > li > button:focus {
   background-color: var(--link-hover-font-color);
   color: var(--logo-white);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio_poster {
   background-color: var(--logo-white);
 }
 
-.portfolio_poster:hover {
+.portfolio_poster:hover,
+.portfolio_poster:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
 }
 
 .portfolio_poster_description {
@@ -387,7 +393,8 @@ body {
   fill: var(--logo-white);
   border-radius: 50%;
 }
-
+.poster_svg_item:focus,
+.footer_svg_item:focus,
 .footer_svg_item:hover,
 .poster_svg_item:hover {
   border-radius: 50%;
@@ -410,7 +417,8 @@ body {
   fill: var(--clients-dark-gray);
 }
 
-.clients_svg:hover {
+.clients_svg:hover,
+.clients_svg:focus {
   border-color: var(--link-hover-font-color);
   fill: var(--link-hover-font-color);
 }
@@ -463,7 +471,7 @@ body {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.footer_desc .nav_link:hover {
+.footer_desc .nav_link:hover .nav_link:focus {
   color: var(--link-hover-font-color);
 }
 
