@@ -114,7 +114,7 @@ body {
   letter-spacing: 0.02em;
   text-align: left;
   padding-left: 93px;
-  padding-right: 345px;
+  padding-right: 310px;
 }
 
 /* Odstęp ustawiony po przez justify content: space-around */
@@ -147,8 +147,10 @@ body {
 
 /* Zmiana koloru po najechaniu myszki */
 .nav_link:hover,
-.nav-contact .nav_link:hover {
+.nav-contact .nav_link:hover,
+.nav_icons {
   color: var(--link-hover-font-color);
+  fill: var(--link-hover-font-color);
 }
 
 .nav-core li:not(:last-child) {
@@ -163,6 +165,19 @@ body {
 .nav-contact .nav_link {
   color: var(--secondary-font-color);
 }
+
+/* IKONY SVG W NAV */ /* IKONY SVG W NAV */ /* IKONY SVG W NAV */ /* IKONY SVG W NAV */ /* IKONY SVG W NAV */
+
+.icons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav_icons {
+  display: flex;
+  align-items: center;
+}
+
 /*
 -------------------##############################----------------------
 /* STYLIZACJA HEADING_BAR  */ /* STYLIZACJA HEADING_BAR  */ /* STYLIZACJA HEADING_BAR  */
