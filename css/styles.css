@@ -192,10 +192,15 @@ body {
 -------------------##############################----------------------
 /* STYLIZACJA HEADING_BAR  */ /* STYLIZACJA HEADING_BAR  */ /* STYLIZACJA HEADING_BAR  */
 .hero {
-  background-color: var(--header-bg);
+  background-color: rgb(47, 48, 58, 0.4);
+
   flex-direction: column;
   justify-content: center;
   padding: 200px;
+}
+
+.hero__bgimage {
+  background: url("/images/Img.jpg");
 }
 
 .hero > h1 {
