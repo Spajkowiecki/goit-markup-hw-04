@@ -104,7 +104,6 @@ body {
 .navigator {
   align-items: center;
   padding: 24px 227px 25px 215px;
-  height: 80px;
   border: 1px solid #ececec;
 }
 
@@ -127,25 +126,9 @@ body {
   letter-spacing: 0.03em;
 }
 
-/* -[P: nav_logo | stylizuje na niebiesko text: "WEB"]- */
-.l-1 span {
-  color: var(--link-hover-font-color);
-}
-/* -[P: nav_logo | stylizuje na biało text: "WEB"]- */
-
-.footer .nav_logo {
-  color: var(--logo-white);
-}
-
-.l-2 span {
-  color: var(--link-hover-font-color);
-}
-/* Podstawowa stylizacja linków  */
-.nav_link {
-  color: var(--main-font-color);
-}
-
-/* Zmiana koloru po najechaniu myszki */
+/* ZMIANA KOLORU ELEMENTÓW*/
+.l-2 span,
+.l-1 span,
 .nav_link:hover,
 .nav_link:focus,
 .nav-contact .nav_link:hover,
@@ -155,6 +138,29 @@ body {
   fill: var(--link-hover-font-color);
 }
 
+.hero > button,
+.filter > li > button:focus,
+.filter > li > button:hover {
+  background-color: var(--link-hover-font-color);
+}
+
+.my_team {
+  background-color: var(--team-bg);
+}
+
+.footer .nav_logo,
+.hero > h1 {
+  color: var(--logo-white);
+}
+/* Podstawowa stylizacja linków  */
+.nav_link {
+  color: var(--main-font-color);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+/* Zmiana koloru po najechaniu myszki */
+
 .nav-core li:not(:last-child) {
   padding-right: 46px;
 }
@@ -163,8 +169,10 @@ body {
   padding-right: 50px;
 }
 
-/* zmiania koloru podstawowego linków w nav-contact i ustawienie odległości pomiędzy elementami */
-.nav-contact .nav_link {
+/* Nadanie elemntom zbiorczo kolor --secondary-font-color */
+.nav-contact .nav_link,
+.poster p,
+.atut_p2 {
   color: var(--secondary-font-color);
 }
 
@@ -187,11 +195,10 @@ body {
   background-color: var(--header-bg);
   flex-direction: column;
   justify-content: center;
-  height: 600px;
+  padding: 200px;
 }
 
 .hero > h1 {
-  color: var(--logo-white);
   letter-spacing: 0.06em;
   font-size: 44px;
   line-height: calc(60 / 44);
@@ -204,15 +211,22 @@ body {
 .hero > button {
   line-height: calc(30 / 16);
   letter-spacing: 0.06em;
-  width: 200px;
-  height: 50px;
+  padding: 10px 41px 10px 42px;
+  border: 2px solid #126cb6;
   color: white;
   border-radius: 4px;
-  background-color: var(--link-hover-font-color);
   align-self: center;
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .hero > button:hover {
+  background-color: #126cb6;
+  border-color: #2196f3;
+  cursor: pointer;
+}
+
+.hero > button:focus {
   cursor: pointer;
 }
 
@@ -257,7 +271,6 @@ body {
   line-height: calc(24 / 14);
   width: 270px;
   letter-spacing: 0.03em;
-  color: var(--secondary-font-color);
 }
 /*
 -------------------##############################----------------------*/
@@ -276,22 +289,13 @@ body {
   padding-top: 30px;
   padding-bottom: 30px;
   margin: auto;
+  font-weight: 500;
 }
 
 .poster h3 {
-  font-weight: 500;
   font-size: 16px;
   letter-spacing: 0.03em;
   padding-bottom: 10px;
-}
-
-.poster p {
-  font-weight: 500;
-  color: var(--secondary-font-color);
-}
-/* my team */
-.my_team {
-  background-color: var(--team-bg);
 }
 
 .filter {
@@ -310,17 +314,17 @@ body {
   line-height: calc(26 / 16);
   letter-spacing: 00.03em;
   cursor: pointer;
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .filter > li > button:hover {
-  background-color: var(--link-hover-font-color);
   color: var(--logo-white);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .filter > li > button:focus {
-  background-color: var(--link-hover-font-color);
   color: var(--logo-white);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -328,6 +332,8 @@ body {
 
 .portfolio_poster {
   background-color: var(--logo-white);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .portfolio_poster:hover,
@@ -360,7 +366,6 @@ body {
   line-height: calc(30 / 16);
   font-size: 16px;
   font-style: normal;
-  color: var(--secondary-font-color);
 }
 
 .posters {
@@ -392,13 +397,17 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
   fill: var(--logo-white);
   border-radius: 50%;
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
-.poster_svg_item:focus,
+
 .footer_svg_item:focus,
+.poster_svg_item:focus,
 .footer_svg_item:hover,
 .poster_svg_item:hover {
   border-radius: 50%;
   background-color: var(--link-hover-font-color);
+  fill: var(--logo-white);
 }
 
 .filter_nav {
@@ -415,6 +424,9 @@ body {
   justify-content: center;
   align-items: center;
   fill: var(--clients-dark-gray);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill, border;
+  transition-duration: 250ms;
 }
 
 .clients_svg:hover,
@@ -434,7 +446,7 @@ body {
   display: flex;
   align-items: center;
   background-color: var(--header-bg);
-  height: 252px;
+  padding: 60px 0px 60px 215px;
   padding-left: 30px;
 }
 
@@ -469,9 +481,11 @@ body {
 
 .footer_desc .nav_link {
   color: rgba(255, 255, 255, 0.6);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
-.footer_desc .nav_link:hover .nav_link:focus {
+.footer_desc .nav_link:hover {
   color: var(--link-hover-font-color);
 }
 
