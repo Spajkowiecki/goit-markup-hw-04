@@ -200,7 +200,7 @@ body {
 }
 
 .hero__bgimage {
-  background: url("/images/Img.jpg");
+  background: url("../images/Img.jpg");
 }
 
 .hero > h1 {
@@ -406,10 +406,18 @@ body {
   transition-duration: 250ms;
 }
 
-.footer_svg_item:focus,
+.poster_svg_item {
+  background-color: rgba(255, 255, 255, 0.1);
+  fill: var(--clients-dark-gray);
+  border-radius: 50%;
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
 .poster_svg_item:focus,
-.footer_svg_item:hover,
-.poster_svg_item:hover {
+.poster_svg_item:hover,
+.footer_svg_item:focus,
+.footer_svg_item:hover {
   border-radius: 50%;
   background-color: var(--link-hover-font-color);
   fill: var(--logo-white);
